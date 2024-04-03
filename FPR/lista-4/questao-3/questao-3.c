@@ -3,20 +3,19 @@
 #include <stdlib.h>
 
 
-void gerarMatriz (int l, int c, int mat[l][c]) {
+void gerarMatriz (int n, int mat[n][n]) {
   int i, j;
-  srand(time(NULL));
-  for (i = 0; i < l; i++) {
-    for (j = 0; j < c; j++) {
-      mat[i][j] = rand() % 10;
+  for (i = 0; i < n; i++) {
+    for (j = 0; j < n; j++) {
+      mat[i][j] = i+j+1;
     }
   }
 }
 
-void printarMatriz (int l, int c, int mat[l][c]) {
+void printarMatriz (int n, int mat[n][n]) {
   int i, j;
-  for (i = 0; i < l; i++) {
-    for (j = 0; j < c; j++) {
+  for (i = 0; i < n; i++) {
+    for (j = 0; j < n; j++) {
       printf("%d ", mat[i][j]);
     }
   printf("\n");
@@ -24,14 +23,12 @@ void printarMatriz (int l, int c, int mat[l][c]) {
 }
 
 void main () {
-  int linhas, colunas;
-  printf("Quantas linhas: ");
-  scanf("%d", &linhas);
-  printf("Quantas colunas: ");
-  scanf("%d", &colunas);
+  int n;
+  printf("Quantas linhas e colunas: ");
+  scanf("%d", &n);
 
-  int matriz[linhas][colunas];
+  int matriz[n][n];
 
-  gerarMatriz(linhas, colunas, matriz);
-  printarMatriz(linhas, colunas, matriz);
+  gerarMatriz(n, matriz);
+  printarMatriz(n, matriz);
 }
