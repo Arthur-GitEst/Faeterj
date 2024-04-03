@@ -29,4 +29,5 @@ void main () {
   int vetor[3];
   somarColunas (3, 3, matriz, vetor);
   printarVetor (3, vetor);
+  printf("\n\n");
 }
