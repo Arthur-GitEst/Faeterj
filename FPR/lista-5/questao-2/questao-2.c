@@ -9,15 +9,21 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+#include <time.h>
 
 void trocarMatrizes (int c1, int c2, int l, int c, int mat[l][c]) {
-    int i, j, aux1, aux2 = mat[0][c1];
-    for (i = 0, j = (l - 1); i < l; i++, j--) {
-        aux1 = mat[i][c2];
-        aux2 = mat[i][c1];
-        mat[i][c2] = aux2;
-        mat[j][c1] = aux1;
+    int i, j, aux;
+    for (i = 0; i < l; i++) {
+        aux = mat[i][c1];
+        mat[i][c1] = mat[i][c2];
+        mat[i][c2] = aux;
     }
+
+    for (i = 0, j = (strlen(mat) - 1); i < j; i++, j--) {
+        mat[i][c1] = mat[j][c1];
+    }
+
 }
 
 void preencherMatriz (int l, int c, int mat[l][c]) {
