@@ -25,7 +25,7 @@ int determinarPalindromo (char s[], int i, int j) {
         if (s[i] != s[j]) {
             return 0;
         } else {
-            determinarPalindromo(s, i+1, j-1);
+            determinarPalindromo(s, ++i, --j);
         }
     }
     return 1;    
