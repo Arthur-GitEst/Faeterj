@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+img {
+    max-height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    height: 6.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem 0 3rem;
+    background-color: #161419;
+    
+}
+
+.menu-icon {
+    height: 2.3rem;
+    margin-right: 320.58px;
+}
+
+.logo {
+    display: flex;
+    font-family: 'Holtwood One SC', serif;
+    font-size: 26px;
+    color: #fff;
+}
+
+.logo-orange {
+    color: #EDA107;
+}
+
+.nav-right {
+    display: flex;
+    gap: 2rem;
+}
+
+.search-bar {
+    border-radius: 360px;
+    border: none;
+    padding: 10px 15px 10px 36px;
+    background-image: url('../svg/search.svg');
+    background-repeat: no-repeat;
+    background-position: 8px;
+    background-color: #222025;
+    color: #CCCCCC;
+    font-size: 16px;
+}
+
+.login-button {
+    border-radius: 360px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    background: linear-gradient(180deg, rgba(205,137,0,1) 0%, rgba(247,174,25,1) 51%, rgba(255,225,55,1) 100%);
+    color: #fff;
+}
+
+.login-button:hover {
+    cursor: pointer;
+}
+

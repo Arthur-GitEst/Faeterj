@@ -8,23 +8,23 @@
 int determinarOrdem (char nomeArq[]);
 
 int main (void) {
-    char nomeArq;
+    char arquivo[30];
 
     printf("Insira o nome do arquivo: ");
     fflush(stdin);
-    gets
+    gets(arquivo);
 
-    switch (determinarOrdem(nomeArq)) {
+    switch (determinarOrdem(arquivo)) {
         case -1:
-        printf("Arquivo nao pode ser aberto.");
+        printf("\nArquivo nao pode ser aberto.");
         break;
 
         case 0:
-        printf("Arquivo nao e ordenado em ordem crescente.");
+        printf("\nArquivo nao e ordenado em ordem crescente.");
         break;
 
         case 1:
-        printf("Arquivo e ordenado em ordem crescente.");
+        printf("\nArquivo e ordenado em ordem crescente.");
         break;
     }
     
@@ -35,12 +35,12 @@ int determinarOrdem (char nomeArq[]) {
     FILE* arq;
     int num, anterior = INT_MIN;
 
-    fopen(nomeArq, "r");
+    arq = fopen(nomeArq, "r");
     
     if (!arq) {
         return -1;
     } else {
-        while (fscanf(arq, "%c", num) != EOF) {
+        while (fscanf(arq, "%d", &num) != EOF) {
             if (num < anterior) {
                 fclose(arq);
                 return 0;
