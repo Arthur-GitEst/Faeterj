@@ -68,6 +68,7 @@ nav {
     font-weight: 700;
     background: #0C7489;
     color: #fff;
+    transition: all 0.3s ease-in-out;
 }
 
 .login-button:hover {
