@@ -10,7 +10,9 @@
 <body>
     <header>
         <nav>
-            <img src="../styles/svg/menu.svg" class="menu-icon">
+            <div class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>
+            </div>
             <div class="logo">
                 <a href="./main.html" class="logo link">
                     <h1 class="logo-orange">MO</h1>
@@ -27,14 +29,29 @@
     </header>
     <main>
         <section class="destaque">
-            <div class="destaque-conteudo">
-                <h1 class="destaque-titulo">O Regresso</h1>
-                <p class="destaque-descricao">Nos anos 1820, um caçador de peles luta pela sobrevivência para se vingar de um mercenário cruel que o deixou à beira da morte próximo ao rio Missouri.</p>
+            <div class="destaque-gradient-container">
+                <div class="destaque-conteudo">
+                    <h1 class="destaque-titulo">O Regresso</h1>
+                    <p class="destaque-descricao">Nos anos 1820, um caçador de peles luta pela sobrevivência para se vingar de um mercenário cruel que o deixou à beira da morte próximo ao rio Missouri.</p>
+                </div>
+                <div class="destaque-options">
+                    <button class="destaque-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>Assistir Agora</button>
+                    <button class="destaque-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>Adicionar à lista</button>
+                </div>
             </div>
-            <div class="destaque-buttons">
-                <button class="destaque-button"><img src="../styles/svg/play.svg">Assistir Agora</button>
-                <button class="destaque-button">Adicionar à lista</button>
-            </div>
+        </section>
+        <section class="catalogo">
+            <ul class="lista-filmes-lançamento">
+                <div class="card">
+                    <h1 class="card-titulo"></h1>
+                    <p class="card-duracao"></p>
+                    <div class="card-options">
+                        <button class="card-button card-play"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play"><polygon points="6 3 20 12 6 21 6 3"/></svg></button>
+                        <button class="card-button card-lista"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-plus"><path d="M11 12H3"/><path d="M16 6H3"/><path d="M16 18H3"/><path d="M18 9v6"/><path d="M21 12h-6"/></svg></button>
+                        <button class="card-button card-info"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></button>
+                    </div>
+                </div>
+            </ul>
         </section>
     </main>
 </body>
