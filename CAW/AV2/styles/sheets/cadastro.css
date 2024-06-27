@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #161419;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem 0 3rem;
+}
+
+.arrow-icon svg {
+    height: 40px;
+    width: 40px;
+    transition: 0.5s;
+}
+
+.arrow-icon svg:hover {
+    cursor: pointer;;
+    height: 45px;
+    width: 45px;
+}
+
+.arrow-icon, .nav-right {
+    flex: 1;
+}
+
+.logo {
+    justify-self: center;
+    display: flex;
+    font-family: 'Holtwood One SC', serif;
+    font-size: 26px;
+    color: #fff;
+}
+
+.logo-blue {
+    color: #0C7489;
+}
+
+main {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.cadastro-container {
+    background-color: #08505E;
+    padding: 5rem 3rem 3rem 3rem;
+    margin-block: 3rem;
+    border-radius: 15px;
+}
+
+.cadastro-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.cadastro-container form h1 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 1.3rem;
+}
+
+.cadastro-container form input {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 2px #CCCCCC solid;
+    background-color: #CCCCCC;
+}
+
+.cadastro-container form .enviar-button {
+    width: 140px;
+    background-color: #032026;
+    color: #fff;
+}
+
+.cadastro-container form .enviar-button:hover {
+    cursor: pointer;
+    background-color: #08505E;
+}
+
+.cadastro-container form p {
+    font-size: 14px;
+}
+
+.cadastro-container form p a {
+    color: #fff;
+}
+
+.cadastro-container form p a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1.3rem;
+    align-items: center;
+    justify-items: center;
+    margin-inline: 10rem;
+    margin-top: 3rem;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+footer a {
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+}
+
+footer .logo {
+    font-size: 40px;
+}
+
+.redes-logos {
+    grid-column: 3;
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.redes-logos svg {
+    height: 30px;
+    width: 30px;
+    transition: 0.5s;
+}
+
+.redes-logos svg:hover {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.watermark {
+    font-size: 10px;
+    font-weight: 400;
+    margin-top: 1rem;
+    margin-bottom: 20px;
+    grid-column: 2;
+}

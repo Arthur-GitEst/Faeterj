@@ -65,21 +65,12 @@ nav {
     font-size: 16px;
 }
 
-.login-button {
-    border-radius: 360px;
-    border: none;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: 700;
-    background: #0C7489;
-    color: #fff;
-    transition: all 0.3s ease-in-out;
-}
 
-.login-button:hover {
-    cursor: pointer;
-    background: #096071;
+.profile-link svg {
+    stroke: #fff;
+    height: 38px;
+    width: 38px;
+    vertical-align: middle;
 }
 
 main {
