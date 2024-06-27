@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #161419;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+header nav {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem 0 3rem;
+    
+}
+
+.menu-icon {
+    height: 2rem;
+    margin-right: 320.58px;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.menu-icon:hover {
+    cursor: pointer;
+    background: rgba(202, 202, 202, 0.075);
+}
+
+.logo {
+    display: flex;
+    font-family: 'Holtwood One SC', serif;
+    font-size: 26px;
+    color: #fff;
+}
+
+.logo-blue {
+    color: #0C7489;
+}
+
+.nav-right {
+    display: flex;
+    gap: 2rem;
+}
+
+.search-bar {
+    border-radius: 360px;
+    border: none;
+    padding: 10px 15px 10px 36px;
+    background-image: url('../svg/search.svg');
+    background-repeat: no-repeat;
+    background-position: 8px;
+    background-color: #222025;
+    color: #CCCCCC;
+    font-size: 16px;
+}
+
+.login-button {
+    border-radius: 360px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+    background: #0C7489;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-button:hover {
+    cursor: pointer;
+    background: #096071;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.profile-info {
+    margin: 4rem 12rem 4rem 12rem;
+    /* background-color: #08505E; */
+    display: grid;
+    align-items: flex-start;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    border-radius: 15px;
+}
+
+.profile-picture {
+    grid-row: 1 / -1;
+    height: 100%;
+    width: 100%;
+    background-color: #161419;
+}
+
+.nome-email {
+    grid-column: 2 / 5;
+    grid-row-start: 2 ;
+    text-align: center;
+}
+
+.nome-email h1 {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.nome-email p {
+    font-size: 14px;
+}
+
+.data-criacao {
+    grid-row-start: 3;
+    margin-top: 2.5rem;
+}
+
+.data-criacao label {
+    font-weight: 600;
+}
+
+.senha {
+    grid-row-start: 3;
+    margin-top: 2.5rem;
+}
+
+.senha label {
+    font-weight: 600;
+}
+
+.sair {
+    grid-row-start: -1;
+    margin-top: 20px;
+}
+
+.sair a {
+    display: flex;
+    align-items: center;
+    color: #C4150F;
+}
+
+.sair a svg {
+    height: 33px;
+    width: 33px;
+}
+
+.side-bar {
+    background-color: #161419;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 12rem;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    display: none;
+}
+
+.side-bar-top {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+}
+
+.side-bar-top svg {
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    padding: 4px;
+}
+
+.side-bar-top svg:hover {
+    cursor: pointer;
+    background-color: rgba(202, 202, 202, 0.075);
+}
+
+.side-bar-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 4rem;
+    padding: 3rem;
+}
+
+.side-bar-bottom a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    padding-block: 20px;
+}
+
+.side-bar a:nth-of-type(2) {
+    background-color: #212024;
+}
+
+
+
+footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1.3rem;
+    align-items: center;
+    justify-items: center;
+    margin-inline: 10rem;
+    margin-top: 3rem;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+footer a {
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+}
+
+footer .logo {
+    font-size: 40px;
+}
+
+.redes-logos {
+    grid-column: 3;
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.redes-logos svg {
+    height: 30px;
+    width: 30px;
+    transition: 0.5s;
+}
+
+.redes-logos svg:hover {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.watermark {
+    font-size: 10px;
+    font-weight: 400;
+    margin-top: 1rem;
+    margin-bottom: 20px;
+    grid-column: 2;
+}

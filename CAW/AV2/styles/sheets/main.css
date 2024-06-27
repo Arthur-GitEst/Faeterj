@@ -89,31 +89,39 @@ main {
 }
 
 .side-bar {
-    /* display: none; */
     background-color: #161419;
-    /* padding-inline: 3rem; */
     height: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 99;
-}
-
-.side-bar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 10rem;
+    justify-content: space-between;
+    width: 12rem;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    display: none;
 }
 
-.side-bar-top {
-    height: 6rem;
-    display: flex;
-    align-items: center;
-}
 
 .side-bar-top svg {
     height: 30px;
     width: 30px;
+    border-radius: 50px;
+    padding: 4px;
+}
+
+.side-bar-top svg:hover {
+    cursor: pointer;
+    background-color: rgba(202, 202, 202, 0.075);
+}
+
+.side-bar-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 4rem;
 }
 
 .side-bar-bottom a {

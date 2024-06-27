@@ -1,18 +1,23 @@
+function esconder (element) {
+    element.style.display = "none";
+}
+
+function mostrar (element) {
+    element.style.display = "block"
+}
+
 function esconderCards () {
     let cardTexto = document.querySelectorAll(".card-titulo, .card-duracao"), cardOptions = document.querySelectorAll(".card div"), cardGradient = document.querySelectorAll(".card");
     
-    cardTexto.forEach(element => element.style.display = "none");
-    cardOptions.forEach(element => element.style.display = "none");
+    cardTexto.forEach(element => esconder(element));
+    cardOptions.forEach(element => esconder(element));
     cardGradient.forEach(element => element.style.background = "none")
 }
 
 function mostrarCard (element) {
     let cardTexto = element.querySelectorAll(".card-titulo, .card-duracao"), cardOptions = element.querySelector(".card div"), cardGradient = element;
 
-    console.log(cardTexto);
-    console.log(cardOptions);
-
-    cardTexto.forEach(texto => texto.style.display = "block");
+    cardTexto.forEach(texto => mostrar(texto));
     cardOptions.style.display = "flex";
     cardGradient.style.background = "linear-gradient(90deg, rgb(129 129 129) 0%, rgba(22, 20, 25, 0) 70%)";
 }
@@ -28,5 +33,27 @@ function esconderCardUnico (element) {
 function redirecionarMain () {
     window.location.href = './main.html';
 }
+
+function sideBarOpenClose () {
+    let sideBar = document.querySelector(".side-bar");
+
+    if (sideBar.style.display != 'none') {
+        sideBar.style.display = "none";
+    } else {
+        sideBar.style.display = "flex";
+    }
+
+}
+
+function sideBarConfig () {
+    let closeIcon = document.querySelector(".close-icon"), menuIcon = document.querySelector(".menu-icon svg");
+
+    console.log(menuIcon);
+    console.log(closeIcon);
+
+    closeIcon.addEventListener("click", function() {sideBarOpenClose()});
+    menuIcon.addEventListener("click", function() {sideBarOpenClose()});
+}
+
 
  

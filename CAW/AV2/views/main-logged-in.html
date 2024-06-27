@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../styles/sheets/reset.css">
     <link rel="stylesheet" href="../styles/sheets/main-logged-in.css">
 </head>
-<body onload="esconderCards()">
+<body onload="esconderCards(); sideBarConfig()">
     <header>
         <nav>
             <div class="menu-icon">
@@ -21,13 +21,25 @@
             </div>
             <div class="nav-right">
                 <input type="text" placeholder="Buscar..." class="search-bar">
-                <a href="./login.html" class="profile-link">
+                <a href="./perfil.html" class="profile-link">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></svg>
                 </a>
             </div>
         </nav>
     </header>
     <main>
+        <section class="side-bar">
+            <div class="side-bar-top">
+                <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+            </div>
+            <div class="side-bar-bottom">
+                <a href="./main-logged-in.html">Início</a>
+                <a href="./perfil.html">Perfil</a>
+                <a href="">Lista</a>
+                <a href="./main.html">Sair</a>
+            </div>
+            <div class="side-bar-filler"></div>
+        </section>
         <section class="destaque">
             <div class="destaque-gradient-container">
                 <div class="destaque-conteudo">
