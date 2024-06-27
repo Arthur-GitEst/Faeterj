@@ -16,7 +16,7 @@ a {
     text-decoration: none;
 }
 
-nav {
+header nav {
     height: 6rem;
     display: flex;
     align-items: center;

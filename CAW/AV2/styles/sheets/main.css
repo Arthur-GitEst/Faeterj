@@ -16,7 +16,7 @@ a {
     text-decoration: none;
 }
 
-nav {
+header nav {
     height: 6rem;
     display: flex;
     align-items: center;
@@ -86,6 +86,47 @@ main {
     display: flex;
     flex-direction: column;
     font-family: 'Nunito Sans', sans-serif;
+}
+
+.side-bar {
+    /* display: none; */
+    background-color: #161419;
+    /* padding-inline: 3rem; */
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10rem;
+}
+
+.side-bar-top {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+}
+
+.side-bar-top svg {
+    height: 30px;
+    width: 30px;
+}
+
+.side-bar-bottom a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    padding-block: 20px;
+}
+
+.side-bar a:nth-of-type(1) {
+    background-color: #212024;
 }
 
 .destaque {
@@ -183,7 +224,7 @@ main {
     left: -3.6rem;
     height: 55px;
     width: 55px;
-    transition: all 0.3s ease-in-out;
+    transition: 0.3s;
 }
 
 .seta-direita {
@@ -192,7 +233,7 @@ main {
     right: -3.6rem;
     height: 55px;
     width: 55px;
-    transition: all 0.3s ease-in-out;
+    transition: 0.3s;
 }
 
 .seta-esquerda:hover, .seta-direita:hover {
@@ -212,6 +253,7 @@ main {
 
 .catalogo-lista {
     display: flex;
+    justify-content: center;
     gap: 1rem;
 }
 
