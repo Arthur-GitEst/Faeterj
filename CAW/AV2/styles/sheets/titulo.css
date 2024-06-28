@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #161419;
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+header nav {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem 0 3rem;
+    
+}
+
+.menu-icon {
+    height: 2rem;
+    margin-right: 320.58px;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+.menu-icon:hover {
+    cursor: pointer;
+    background: rgba(202, 202, 202, 0.075);
+}
+
+.logo {
+    display: flex;
+    font-family: 'Holtwood One SC', serif;
+    font-size: 26px;
+    color: #fff;
+}
+
+.logo-blue {
+    color: #0C7489;
+}
+
+.nav-right {
+    display: flex;
+    gap: 2rem;
+}
+
+.search-bar {
+    border-radius: 360px;
+    border: none;
+    padding: 10px 15px 10px 36px;
+    background-image: url('../svg/search.svg');
+    background-repeat: no-repeat;
+    background-position: 8px;
+    background-color: #222025;
+    color: #CCCCCC;
+    font-size: 16px;
+}
+
+.profile-link svg {
+    stroke: #fff;
+    height: 38px;
+    width: 38px;
+    vertical-align: middle;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.side-bar {
+    background-color: #161419;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 12rem;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    display: none;
+}
+
+.side-bar-top {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+}
+
+.side-bar-top svg {
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    padding: 4px;
+}
+
+.side-bar-top svg:hover {
+    cursor: pointer;
+    background-color: rgba(202, 202, 202, 0.075);
+}
+
+.side-bar-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 4rem;
+    padding: 3rem;
+}
+
+.side-bar-bottom a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    padding-block: 20px;
+}
+
+.title-info {
+    margin: 10rem 8rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 4rem 2rem 2rem;
+    align-items: center;
+    gap: 3rem;
+}
+
+.title-poster {
+    grid-row: 1 / -1;
+}
+
+.title-poster img {
+    border-radius: 15px;
+}
+
+.title-nome, .title-data-duracao {
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 8px;
+}
+
+.title-nome {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.title-data-duracao {
+    color: #CCCCCC;
+    font-size: 14px;
+    align-self: flex-end;
+}
+
+.title-producao strong {
+    font-weight: 700;
+}
+
+.title-nome, .title-sinopse, .title-producao {
+    align-self: flex-start;
+}
+
+.title-trailer {
+    height: 480px;
+    width: 853px;
+    grid-column: span 2;
+    justify-self: center;
+    margin: 0 auto 0 auto;
+}
+
+.title-trailer iframe {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1.3rem;
+    align-items: center;
+    justify-items: center;
+    margin-inline: 10rem;
+    margin-top: 3rem;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+footer a {
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+}
+
+footer .logo {
+    font-size: 40px;
+}
+
+.redes-logos {
+    grid-column: 3;
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.redes-logos svg {
+    height: 30px;
+    width: 30px;
+    transition: 0.5s;
+}
+
+.redes-logos svg:hover {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.watermark {
+    font-size: 10px;
+    font-weight: 400;
+    margin-top: 1rem;
+    margin-bottom: 20px;
+    grid-column: 2;
+}

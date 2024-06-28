@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIO</title>
+    <link rel="stylesheet" href="../styles/sheets/reset.css">
+    <link rel="stylesheet" href="../styles/sheets/titulo.css">
+</head>
+<body onload="esconderCards(); sideBarConfig()">
+    <header>
+        <nav>
+            <div class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>
+            </div>
+            <div class="logo">
+                <a href="./main.html" class="logo link">
+                    <h1 class="logo-blue">MO</h1>
+                    <h2 class="logo-white">VIO</h2>
+                </a>
+            </div>
+            <div class="nav-right">
+                <input type="text" placeholder="Buscar..." class="search-bar">
+                <a href="./perfil.html" class="profile-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-round"><path d="M18 20a6 6 0 0 0-12 0"/><circle cx="12" cy="10" r="4"/><circle cx="12" cy="12" r="10"/></svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="side-bar">
+            <div class="side-bar-top">
+                <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+            </div>
+            <div class="side-bar-bottom">
+                <a href="./main-logged-in.html">Início</a>
+                <a href="./perfil.html">Perfil</a>
+                <a href="">Lista</a>
+                <a href="./main.html">Sair</a>
+            </div>
+            <div class="side-bar-filler"></div>
+        </section>
+        <section class="title-info">
+            <div class="title-poster">
+                <img src="../styles/png/oppenheimer.jpg">
+            </div>
+            <div class="title-nome">Oppenheimer</div>
+            <div class="title-data-duracao">
+                <p>2023 ● 3h</p>
+            </div>
+            <div class="title-sinopse">
+                <p>O físico J. Robert Oppenheimer trabalha com uma equipe de cientistas durante o Projeto Manhattan, levando ao desenvolvimento da bomba atômica.</p>
+            </div>
+            <div class="title-producao">
+                <p class="title-producao-elenco"><strong>Elenco: </strong>Cillian Murphy, Florence Pugh, Emily Blunt, Robert Downey Jr.</p>
+                <p class="title-producao-diretor"><strong>Diretor: </strong>Christopher Nolan</p>
+            </div>
+        </section>
+        <section class="title-trailer">
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/1V4dzjJHs1E" title="OPPENHEIMER | Trailer Legendado" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+    </main>
+    <footer>
+        <a href="">Centro de Ajuda</a>
+        <a href="">Política de Privacidade</a>
+        <a href="">Entre em Contato</a>
+        <a href="">Termos de Uso</a>
+        <a href="">Sobre Nós</a>
+        <a href="">Trabalhe Conosco</a>
+        <div class="logo">
+            <h1 class="logo-blue">MO</h1>
+            <h1 class="logo-white">VIO</h1>
+        </div>
+        <div class="redes-logos">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+        </div>
+        <p class="watermark">@ 2024 MOVIO, Ltd.</p>
+    </footer>
+</body>
+<script src="../scripts/main.js"></script>
+</html>

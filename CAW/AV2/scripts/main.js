@@ -34,6 +34,10 @@ function redirecionarMain () {
     window.location.href = './main.html';
 }
 
+function redirecionarTitulo () {
+    window.location.href = './titulo.html';
+}
+
 function sideBarOpenClose () {
     let sideBar = document.querySelector(".side-bar");
 
@@ -46,13 +50,11 @@ function sideBarOpenClose () {
 }
 
 function sideBarConfig () {
-    let closeIcon = document.querySelector(".close-icon"), menuIcon = document.querySelector(".menu-icon svg");
-
-    console.log(menuIcon);
-    console.log(closeIcon);
+    let closeIcon = document.querySelector(".close-icon"), menuIcon = document.querySelector(".menu-icon"), cardInfo = document.getElementsByClassName("card-info");
 
     closeIcon.addEventListener("click", function() {sideBarOpenClose()});
     menuIcon.addEventListener("click", function() {sideBarOpenClose()});
+    cardInfo[0].addEventListener("click", function() {redirecionarTitulo()});
 }
 
 
