@@ -2,6 +2,41 @@
 #include <string.h>
 #include <stdlib.h>
 
+// void menu () {
+//   int opcao;
+
+//   do {
+//         printf("Selecione uma opção:\n");
+//         printf("1 - Preencher Estaticamente\n");
+//         printf("2 - Preencher Dinamicamente\n");
+//         printf("3 - Ordenar Vetor\n");
+//         printf("4 - Exibir Vetor\n");
+//         printf("5 - Sair\n");
+
+//         printf("Opção: ");
+//         scanf("%d", &opcao);
+
+//         switch (opcao) {
+//             case 1:
+//                 preencherEstatico(vNomesE, quantidade);
+//                 menu();
+//             case 2: 
+//                 preencherDinamico(vNomesD, quantidade);
+//                 menu();
+//             case 3:
+//                 ordenar(vNomesD, quantidade);
+//                 menu();
+//             case 4:
+//                 exibir(vNomesD, quantidade);
+//                 menu();
+//             case 5:
+//                 break;
+//             default:
+//                 break;
+//         }
+//     } while (1);
+// }
+
 void preencherEstatico (char *vNomes[], int quant) {
     char nome[100];
     int i, tam;
