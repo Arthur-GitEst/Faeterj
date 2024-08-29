@@ -68,6 +68,7 @@ int encontrarCompatibilidade (char *pessoaEscolhida, tPessoa *pessoas, int limia
                 printf("%s\n", pessoas[i].nome);
                 soma++;
             }
+            free(pessoas[i].nome);
         }
     }
 

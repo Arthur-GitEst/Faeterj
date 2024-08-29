@@ -6,6 +6,62 @@
     "configurations": [
         {
             "type": "java",
+            "name": "exercicio3",
+            "request": "launch",
+            "mainClass": "POB.exercicios1.exercicio3",
+            "projectName": "Faeterj_43f044be"
+        },
+        {
+            "type": "java",
+            "name": "Exercicio2",
+            "request": "launch",
+            "mainClass": "POB.exercicios1.exercicio2F.Exercicio2",
+            "projectName": "Faeterj_43f044be"
+        },
+        {
+            "type": "java",
+            "name": "exercicio1",
+            "request": "launch",
+            "mainClass": "POB.exercicios1.exercicio1F.exercicio1",
+            "projectName": "Faeterj_43f044be"
+        },
+        {
+            "type": "java",
+            "name": "exercicio2",
+            "request": "launch",
+            "mainClass": "exercicio2F.exercicio2",
+            "projectName": "Faeterj_43f044be"
+        },
+        {
+            "type": "java",
+            "name": "exerc2",
+            "request": "launch",
+            "mainClass": "POB.exercicios1.exercicio2F.exerc2",
+            "projectName": "Faeterj_43f044be"
+        },
+        {
+            "type": "java",
+            "name": "exercicio2",
+            "request": "launch",
+            "mainClass": "POB.exercicios1.exercicio2F.exercicio2",
+            "projectName": "Faeterj_43f044be"
+        },
+        {
+            "type": "java",
+            "name": "exercicio2",
+            "request": "launch",
+            "mainClass": "POB.exercicios1.exercicio2.exercicio2",
+            "projectName": "Faeterj_43f044be"
+        },
+        {
+            "type": "java",
+            "name": "exercicio1",
+            "request": "launch",
+            "mainClass": "exercicio1",
+            "projectName": "Faeterj_43f044be"
+        },
+        {
+            "type": "java",
             "name": "Aula1",
             "request": "launch",
             "mainClass": "Aula1",
