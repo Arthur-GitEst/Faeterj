@@ -1,0 +1,22 @@
+Hub x Switch
+
+Hub: 
+    * half-duplex (CSMA/CD)
+    * todas as interfaces na mesma velocidade que entra em uma porta é replicada nas demais
+
+Switch
+    * half e full-duplex
+    * "aprende" o endereço MAC e entrega quadros apenas ao destino
+    * portas podem operar em velocidades diferentes
+
+- Enquadramento
+- Código Mauchester
+- Switch x Roteador
+
+- Diferença entre versões do padrão Ethernet
+    * Ethernet - IEEE 802.3
+    * FastEthernet - IEEE 802.3u
+    * GigabitEthernet - IEEE 802.3z
+    * 10 GigabitEthernet - IEEE 802.3ae
+
+- Domínio de Colisão x Domínio de Broadcast
