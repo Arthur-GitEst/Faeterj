@@ -3,5 +3,7 @@
     "files.associations": {
         "stdlib.h": "c",
         "tadcirculo.h": "c"
-    }
+    },
+    "editor.wordWrap": "on",
+    "C_Cpp.errorSquiggles": "disabled"
 }
