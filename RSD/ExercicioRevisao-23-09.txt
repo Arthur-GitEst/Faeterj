@@ -1,0 +1,44 @@
+1) Escreva os endereços a seguir no formato mais simplificado:
+
+a) 0000:0000:fe01:c001:0000:0000:0000:001b
+
+R: 0:0:fe01:c001::1b
+
+b) ff80:0000:0010:0000:0000:1002:00ab:000a
+
+R: ff80:0:10::1002:ab:a
+
+2) Escreva os endereços a seguir no formato mais extenso:
+
+a) ff80::cafe:0:2
+
+R: ff80:0000:0000:0000:0000:cafe:0000:0002
+
+b) ::25:300:d
+
+R: 0000:0000:0000:0000:0000:0025:0300:000d
+
+3) Qual(is) alternativa(s) não representam endereços ipv6? Justifique.
+
+a) ::ffff:45
+
+b) 123:0:45::801:bc
+
+c) 13::450:1cfe::4801
+
+d) abc:dgh:1::45ce
+
+R: Alternativa c e d. Pois não existe h no sistema hexadecimal e a alternativa c tem uso duplo dos dois pontos.
+
+4) Escreva o endereço 1pv6 a seguir, representando os bits no formato hexadecimal:
+
+0000010100110000
+0000001011001111
+1100000000000100
+1111110110100000
+0000000000000000
+0000000000000000
+0000000000000000
+0000000001000100
+
+R: 530:2cf:c004:fda0::44
