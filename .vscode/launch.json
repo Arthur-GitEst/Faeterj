@@ -3,6 +3,27 @@
   "configurations": [
     {
       "type": "java",
+      "name": "questao8",
+      "request": "launch",
+      "mainClass": "POB.exercicios3.questao8",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "questao7",
+      "request": "launch",
+      "mainClass": "POB.exercicios3.questao7",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "questao6",
+      "request": "launch",
+      "mainClass": "POB.exercicios3.questao6",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
       "name": "questao5",
       "request": "launch",
       "mainClass": "POB.exercicios3.questao5",
