@@ -1,71 +1,122 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "questao5",
+      "request": "launch",
+      "mainClass": "POB.exercicios3.questao5",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
+      "name": "questao4",
+      "request": "launch",
+      "mainClass": "POB.exercicios3.questao4",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
+      "name": "questao3",
+      "request": "launch",
+      "mainClass": "POB.exercicios3.questao3",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
+      "name": "questao2",
+      "request": "launch",
+      "mainClass": "POB.exercicios3.questao2",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
+      "name": "questao1",
+      "request": "launch",
+      "mainClass": "POB.exercicios3.questao1",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
+      "name": "exercicio3",
+      "request": "launch",
+      "mainClass": "POB.exercicios1.exercicio3",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "Exercicio2",
+      "request": "launch",
+      "mainClass": "POB.exercicios1.exercicio2F.Exercicio2",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "exercicio1",
+      "request": "launch",
+      "mainClass": "POB.exercicios1.exercicio1F.exercicio1",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "exercicio2",
+      "request": "launch",
+      "mainClass": "exercicio2F.exercicio2",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "exerc2",
+      "request": "launch",
+      "mainClass": "POB.exercicios1.exercicio2F.exerc2",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "exercicio2",
+      "request": "launch",
+      "mainClass": "POB.exercicios1.exercicio2F.exercicio2",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "exercicio2",
+      "request": "launch",
+      "mainClass": "POB.exercicios1.exercicio2.exercicio2",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "exercicio1",
+      "request": "launch",
+      "mainClass": "exercicio1",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "Aula1",
+      "request": "launch",
+      "mainClass": "Aula1",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Reps/Faeterj/ESD/aulaListas",
+      "program": "c:/Reps/Faeterj/ESD/aulaListas/build/Release/outRelease",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
         {
-            "type": "java",
-            "name": "exercicio3",
-            "request": "launch",
-            "mainClass": "POB.exercicios1.exercicio3",
-            "projectName": "Faeterj_43f044be"
-        },
-        {
-            "type": "java",
-            "name": "Exercicio2",
-            "request": "launch",
-            "mainClass": "POB.exercicios1.exercicio2F.Exercicio2",
-            "projectName": "Faeterj_43f044be"
-        },
-        {
-            "type": "java",
-            "name": "exercicio1",
-            "request": "launch",
-            "mainClass": "POB.exercicios1.exercicio1F.exercicio1",
-            "projectName": "Faeterj_43f044be"
-        },
-        {
-            "type": "java",
-            "name": "exercicio2",
-            "request": "launch",
-            "mainClass": "exercicio2F.exercicio2",
-            "projectName": "Faeterj_43f044be"
-        },
-        {
-            "type": "java",
-            "name": "exerc2",
-            "request": "launch",
-            "mainClass": "POB.exercicios1.exercicio2F.exerc2",
-            "projectName": "Faeterj_43f044be"
-        },
-        {
-            "type": "java",
-            "name": "exercicio2",
-            "request": "launch",
-            "mainClass": "POB.exercicios1.exercicio2F.exercicio2",
-            "projectName": "Faeterj_43f044be"
-        },
-        {
-            "type": "java",
-            "name": "exercicio2",
-            "request": "launch",
-            "mainClass": "POB.exercicios1.exercicio2.exercicio2",
-            "projectName": "Faeterj_43f044be"
-        },
-        {
-            "type": "java",
-            "name": "exercicio1",
-            "request": "launch",
-            "mainClass": "exercicio1",
-            "projectName": "Faeterj_43f044be"
-        },
-        {
-            "type": "java",
-            "name": "Aula1",
-            "request": "launch",
-            "mainClass": "Aula1",
-            "projectName": "Faeterj_43f044be"
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
         }
-    ]
+      ]
+    }
+  ]
 }
