@@ -126,9 +126,9 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "c:/Reps/Faeterj/ESD/aulaListas",
-      "program": "c:/Reps/Faeterj/ESD/aulaListas/build/Release/outRelease",
+      "externalConsole": false,
+      "cwd": "/home/alun23204708360068/Documentos/Faeterj/ESD/Fila/teste4",
+      "program": "/home/alun23204708360068/Documentos/Faeterj/ESD/Fila/teste4/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
