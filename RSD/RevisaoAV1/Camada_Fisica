@@ -1,0 +1,27 @@
+Função: conversão de bits em sinais e vice-versa, respeitando o meio físico.
+
+Meios Físicos: 
+
+    * Guiados: 
+        - Fibra Ótica
+        - Cabo Par Traçado
+        - Cabo Coaxial
+
+    * Não-Guiados:
+        - Celular
+        - Rádio
+        - Satélite
+        - WIFI
+
+Classificacao quanto a area de cobertura: 
+
+    * PAN: personal
+    * LAN: local
+    * MAN: metropolitan
+    * WAN: wide (grandes)
+
+Placa de Rede: controla o envio e recebimento de dados de um computador em uma rede, através de meios guiados ou não-guiados.
+
+    * MAC: endereço único da placa. Não muda independente da rede. Representado em hexadecimal.
+
+Modo

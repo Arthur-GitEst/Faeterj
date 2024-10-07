@@ -1,0 +1,29 @@
+Atraso Total = Afila + Aprocesso + Atrans + Apropag
+
+    * Afila = complexo e estatístico
+    * Aprocesso = constante
+    * Atrans = tamanho pacote / velocidade
+    * Apropag = distância / índice de velocidade de propagação
+
+Perdas: falta de recursos, falta de rota ou falhas.
+
+Comutação de Pacotes: sem reserva de recursos e cada roteador tem autonomia para tentar cada pacote
+
+Comutação de Circuitos: antes da transmissão de dados. É necessário a reserva de recursos para estabelecer um caminho.
+
+Internet:
+
+    * Borda: dispositivos finais / servidores
+    * Núcleo: roteadores / redes
+
+Protocolo: regras para troca de mensagens, considerando-se o formato
+
+    * RFC: Request for Comments, documentos técnicos criados por indivíduos e    organizações que lidam com tecnologia.
+
+Modelo de Camadas:
+   
+    * Modelo OSI: Aplicação / Apresentação / Sessão / Transporte / Rede / Enlace / Física
+
+    *Arquitetura TCP/IP:
+        * Modelo Híbrido: Aplicação / Transporte / Rede / Enlace / Física
+        * Modelo Tanembaum : Aplicação / Transporte / Rede / Acesso à rede   
