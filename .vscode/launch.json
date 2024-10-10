@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ControlaFuncionario",
+      "request": "launch",
+      "mainClass": "POB.exercicioHeranca.empresa.controle.ControlaFuncionario",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "ControlaCliente",
+      "request": "launch",
+      "mainClass": "POB.exercicioHeranca.fabrica.controle.ControlaCliente",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
       "name": "questao8",
       "request": "launch",
       "mainClass": "POB.exercicios3.questao8",
