@@ -3,13 +3,20 @@
   "configurations": [
     {
       "type": "java",
+<<<<<<< HEAD
       "name": "questao2",
       "request": "launch",
       "mainClass": "POB.exercicios4.questao2",
+=======
+      "name": "ControlaFuncionario",
+      "request": "launch",
+      "mainClass": "POB.exercicioHeranca.empresa.controle.ControlaFuncionario",
+>>>>>>> 0cd24954ca6f337f8991bd9e789956f3ff3b485a
       "projectName": "Faeterj_43f044be"
     },
     {
       "type": "java",
+<<<<<<< HEAD
       "name": "questao1",
       "request": "launch",
       "mainClass": "POB.exercicios4.questao1",
@@ -20,6 +27,11 @@
       "name": "questao9",
       "request": "launch",
       "mainClass": "POB.exercicios3.questao9",
+=======
+      "name": "ControlaCliente",
+      "request": "launch",
+      "mainClass": "POB.exercicioHeranca.fabrica.controle.ControlaCliente",
+>>>>>>> 0cd24954ca6f337f8991bd9e789956f3ff3b485a
       "projectName": "Faeterj_43f044be"
     },
     {
