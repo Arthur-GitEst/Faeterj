@@ -1,0 +1,126 @@
+Questão 1
+
+1) Sobre estruturas de dados elementares, assinale a alternativa INCORRETA.
+
+R: C. Em uma lista encadeada, a ordem dos objetos é definida pelo índice da lista.
+
+2) Considere as seguintes estruturas de dados com as propriedades definidas a seguir:
+I - Inserção e remoção de elementos acontecem apenas na “cabeça” da estrutura.
+II - Inserção de um nó no meio da estrutura pode ser realizada com custo computacional constante.
+III - Respeito à política FIFO: o primeiro elemento que entra é o primeiro a sair.
+As descrições acima se referem às seguintes estruturas, respectivamente,
+
+R: A. pilha, lista, fila
+
+3) Considere que os números 10, 11, 12, 13, 14 foram inseridos, nessa ordem, em uma fila. Esses mesmos números foram inseridos na mesma ordem em uma pilha. Nesse caso,
+
+R: D. o último elemento a ser removido da fila é o número 14.
+
+4) Sobre o tema, Estrutura de Dados, analise as assertivas e assinale a alternativa correta:
+
+I. Pilhas - São estruturas de dados do tipo LIFO (last-in first-out), onde o último elemento a ser
+inserido, será o primeiro a ser retirado. Assim, uma pilha permite acesso a apenas um item de dados
+- o último inserido. Para processar o penúltimo item inserido, deve-se remover o último.
+II. FILAS - São estruturas de dados do tipo FIFO (first-in first-out), onde o primeiro elemento a ser
+inserido, será o primeiro a ser retirado, ou seja, adiciona-se itens no fim e remove-se do início.
+III. Lista linear é uma estrutura de dados na qual elementos de um mesmo tipo de dado estão
+organizados de maneira sequencial. Não necessariamente, estes elementos estão fisicamente em
+sequência, mas a ideia é que exista uma ordem posicional entre eles.
+IV. Em uma lista linear em alocação sequencial, cada nó é formado por campos que armazenam
+características distintas dos elementos da lista. Cada nó da lista pode possuir um identificador
+denominado chave, e a ordem dos elementos se dá pela contiguidade física
+
+R: D. Todas estão corretas.
+
+5) A pilha P e a fila F possuem originalmente n elementos cada (n&gt;5), e suas operações são:
+⮚ empilha(P, elemento): inserir elemento na pilha P;desempilha(P): remover da pilha P e retornar o
+elemento removido;
+⮚ enfileira(F, elemento): inserir elemento na fila F;desenfileira(F), remover da fila F e retornar o elemento
+removido.
+Seja o pseudocódigo abaixo:
+para i = 1 até n, faça
+empilha(P, desempilha(P))
+enfileira(F, desenfileira(F))
+fim-para
+Ao final da execução do pseudocódigo, os estados finais de P e F são, respectivamente:
+
+R: C. elementos em ordem original e elementos em ordem inversa.
+
+6) O Round-Robin é um tipo de escalonamento preemptivo mais simples e consiste em repartir uniformemente
+o tempo da CPU entre todos os processos prontos para a execução. Os processos são organizados em uma
+estrutura de dados, alocando-se a cada um uma fatia de tempo da CPU, igual a um número de quanta. Caso
+um processo não termine dentro de sua fatia de tempo, retorna para o fim da estrutura e uma nova fatia de
+tempo é alocada para o processo que está no começo da estrutura e que dela sai para receber o tempo de
+CPU.
+A estrutura de dados utilizada nesse tipo de escalonamento é:
+
+R: C. fila circular.
+
+7) Considerando as estruturas de dados pilhas e filas, é correto afirmar que:
+
+R: D. a pilha (stack) é usada pelo Sistema Operacional para armazenar informações sobre as subrotinas ativas num programa de computador. Quem invoca a subrotina empilha o endereço de retorno, quando termina sua execução, a subrotina invocada desempilha o endereço de retorno.
+
+8) 
+
+R: Pilha e Pilha
+
+9) Acerca da estrutura de dados do tipo filas, considere as operações de inserção e remoção de uma fila F
+abaixo:
+1. enfileira (&#39;amarelo&#39;, F)
+2. enfileira (&#39;branco&#39;, F)
+3. enfileira (&#39;verde&#39;, F)
+4. enfileira (&#39;vermelho&#39;, F)
+5. desenfileira (F)
+6. desenfileira (F)
+7. enfileira (&#39;azul&#39;, F)
+8. enfileira (desenfileira (F), F)
+
+O resultado final das operações resulta em:
+
+R: E. [vermelho, azul, verde]
+
+10) A armazenagem de dados é importante para que, quando for necessário, esses dados possam ser
+apresentados automaticamente em uma ordem predeterminada. Os dados podem ser recuperados na mesma ordem de armazenamento ou em ordem diferente. Considerando que as estruturas de dados auxiliam na realização de tais operações, assinale a opção correta.
+
+R: C. Considere que Roberto tenha feito uso de uma lista encadeada simples para programar o
+armazenamento e o posterior acesso aos dados acerca dos equipamentos instalados em sua
+empresa. Considere, ainda, que, após realizar uma consulta acerca do equipamento X, Roberto
+precisou acessar outro equipamento Y que se encontrava, nessa lista, em posição anterior ao equipamento X. Nessa situação, pela forma como os ponteiros são implementados em uma lista
+encadeada simples, o algoritmo usado por Roberto realizou a consulta ao equipamento Y sem
+reiniciar a pesquisa do começo da lista.
+
+Questão 2
+
+struct carro {
+    char *modelo;
+    char *chassi;
+    tComponente *componente;
+    tCliente *cliente;
+}
+
+struct cliente {
+    char *nome;
+    char *endereco;
+    tNo *inicio;
+    tNo *fim;
+}
+
+struct componente {
+    char *nome;
+    int quantidade;
+    char *cor;
+    float preco;
+    tFornecedor *fornecedor;
+    tNo *primeiro;
+}
+
+struct fornecedor {
+    int cnpj;
+    char *razaoSocial;
+}
+
+struct no {
+    tNo *prox;
+};
+
+Todas são struct, sendo tCliente uma fila, e tComponente uma lista encadeada.
