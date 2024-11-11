@@ -73,7 +73,12 @@ INTO empregado (nome, rg, cic, depto, rg_supervisor, salario) VALUES ('Jorge', 4
 INTO empregado (nome, rg, cic, depto, rg_supervisor, salario) VALUES ('Renato', 50505050, 55555555, 3, 20202020, 1300.00)
 SELECT * FROM dual;
 
-INSERT
+INSERT ALL
+INTO departamento (nome, numero, rg_gerente) VALUES ('Contabilidade', 1, 10101010)
+INTO departamento (nome, numero, rg_gerente) VALUES ('Engenharia Civil', 2, 30303030)
+INTO departamento (nome, numero, rg_gerente) VALUES ('Engenharia
+Mecânica', 3, 20202020)
+
 
 
 
