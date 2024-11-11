@@ -78,6 +78,35 @@ INTO departamento (nome, numero, rg_gerente) VALUES ('Contabilidade', 1, 1010101
 INTO departamento (nome, numero, rg_gerente) VALUES ('Engenharia Civil', 2, 30303030)
 INTO departamento (nome, numero, rg_gerente) VALUES ('Engenharia
 Mecânica', 3, 20202020)
+SELECT * FROM dual;
+
+INSERT ALL
+INTO projeto (nome, numero, localizacao) VALUES ('Financeiro 1', 5, 'São Paulo')
+INTO projeto (nome, numero, localizacao) VALUES ('Motor 3', 10, 'Rio Claro')
+INTO projeto (nome, numero, localizacao) VALUES ('Prédio Central', 20, 'Campinas')
+SELECT * FROM dual;
+
+INSERT ALL
+INTO dependentes (rg_responsavel, nome_dependente, nascimento, relacao, sexo) VALUES (10101010, 'Jorge', '12-27-86', 'Filho', 'M')
+INTO dependentes (rg_responsavel, nome_dependente, nascimento, relacao, sexo) VALUES (10101010, 'Luiz', '11-18-79', 'Filho', 'M')
+INTO dependentes (rg_responsavel, nome_dependente, nascimento, relacao, sexo) VALUES (20202020, 'Fernanda', '02-14-69', 'Cônjuge', 'F')
+INTO dependentes (rg_responsavel, nome_dependente, nascimento, relacao, sexo) VALUES (20202020, 'Ângelo', '02-10-95', 'Filho', 'M')
+INTO dependentes (rg_responsavel, nome_dependente, nascimento, relacao, sexo) VALUES (30303030, 'Adreia', '05-01-90', 'Filho', 'F')
+SELECT * FROM dual;
+
+INSERT ALL
+INTO departamento_projeto (numero_dpto, numero_projeto) VALUES (2, 5)
+INTO departamento_projeto (numero_dpto, numero_projeto) VALUES (3, 10)
+INTO departamento_projeto (numero_dpto, numero_projeto) VALUES (2, 20)
+SELECT * FROM dual;
+
+INSERT ALL
+INTO empregado_projeto (rg_empregado, numero_projeto, horas) VALUES (20202020, 5, 10)
+INTO empregado_projeto (rg_empregado, numero_projeto, horas) VALUES (20202020, 10, 25)
+INTO empregado_projeto (rg_empregado, numero_projeto, horas) VALUES (30303030, 5, 35)
+INTO empregado_projeto (rg_empregado, numero_projeto, horas) VALUES (40404040, 20, 50)
+INTO empregado_projeto (rg_empregado, numero_projeto, horas) VALUES (50505050, 20, 35)
+SELECT * FROM dual;
 
 
 
