@@ -3,6 +3,48 @@
   "configurations": [
     {
       "type": "java",
+      "name": "exercicio4",
+      "request": "launch",
+      "mainClass": "POB.exercicios2.exercicio4",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "exercicio3",
+      "request": "launch",
+      "mainClass": "POB.exercicios2.exercicio3",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "exercicio2",
+      "request": "launch",
+      "mainClass": "POB.exercicios2.exercicio2",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "exercicio1",
+      "request": "launch",
+      "mainClass": "POB.exercicios2.exercicio1",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "exercicio5",
+      "request": "launch",
+      "mainClass": "POB.exercicios1.exercicio5",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
+      "name": "exercicio4",
+      "request": "launch",
+      "mainClass": "POB.exercicios1.exercicio4",
+      "projectName": "Faeterj_43f044be"
+    },
+    {
+      "type": "java",
       "name": "ControlaPacientes",
       "request": "launch",
       "mainClass": "POB.exercicioArrayList.controle.ControlaPacientes",
