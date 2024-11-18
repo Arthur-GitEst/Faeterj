@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "ControlaPacientes",
+      "request": "launch",
+      "mainClass": "POB.exercicioArquivo.controle.ControlaPacientes",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
       "name": "exercicio4",
       "request": "launch",
       "mainClass": "POB.exercicios2.exercicio4",

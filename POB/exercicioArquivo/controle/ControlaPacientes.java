@@ -1,20 +1,24 @@
-package POB.exercicioArrayList.controle;
+package POB.exercicioArquivo.controle;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import POB.exercicioArrayList.dominio.Paciente;
+import POB.exercicioArquivo.dominio.Paciente;
 
 public class ControlaPacientes {
-    private ArrayList<Paciente> pacientes = new ArrayList<>();
+    private ArrayList<Paciente> pacientes;
+    private final String arquivoPacientes = "POB/exercicioArquivo/arquivos/pacientes.txt";
 
     public ControlaPacientes() {
         this.pacientes = new ArrayList<>();
+        carregarPacientes();
     }
 
     public void incluirPaciente(int numero, double peso, double altura) {
         Paciente paciente = new Paciente(numero, peso, altura);
         pacientes.add(paciente);
+        salvarPacientes();
         System.out.println("Paciente Incluso!");
     }
 
@@ -30,6 +34,8 @@ public class ControlaPacientes {
 
             paciente.setPeso(peso);
             paciente.setAltura(altura);
+            salvarPacientes();
+            System.out.println("Paciente alterado com sucesso!");
        } else {
             System.out.println("Paciente não encontrado.");
        }
@@ -49,6 +55,7 @@ public class ControlaPacientes {
 
         if (paciente != null) {
             pacientes.remove(paciente);
+            salvarPacientes();
             System.out.println("Paciente excluído com sucesso!");
         } else {
             System.out.println("Paciente não encontrado.");
@@ -62,6 +69,34 @@ public class ControlaPacientes {
             for (Paciente paciente : pacientes) {
                 paciente.listarPaciente();
             }
+        }
+    }
+
+    public void salvarPacientes() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(arquivoPacientes))) {
+            for (Paciente paciente : pacientes) {
+                writer.write(paciente.getNum() + ";" + " " + paciente.getPeso() + ";" + " " + paciente.getAltura());
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Erro ao salvar pacientes: " + e.getMessage());
+        }
+    }
+
+    public void carregarPacientes() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(arquivoPacientes))) {
+            String linha;
+            while ((linha = reader.readLine()) != null) {
+                String[] dados = linha.split(";");
+                int numero = Integer.parseInt(dados[0]);
+                double peso = Double.parseDouble(dados[1]);
+                double altura = Double.parseDouble(dados[2]);
+                pacientes.add(new Paciente(numero, peso, altura));
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Arquivo de pacientes não encontrado. Será criado ao salvar novos pacientes.");
+        } catch (IOException e) {
+            System.out.println("Erro ao carregar pacientes: " + e.getMessage());
         }
     }
 
@@ -94,6 +129,7 @@ public class ControlaPacientes {
                 case 2:
                     System.out.print("Numero do Paciente: ");
                     int numeroAlterar = ler.nextInt();
+                    ler.nextLine();
                     controle.alterarPaciente(numeroAlterar);
                     break;
                 case 3:
