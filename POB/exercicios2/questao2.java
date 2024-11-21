@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 // Crie um programa para solicitar o ano atual e o ano de nascimento de uma pessoa. Calcular sua idade aproximada e informá-la. Se sua idade for inferior a 16 anos, escrever a mensagem "Não pode votar"; caso contrário, emitir a mensagem "É eleitor".
 
-public class exercicio2 {
+public class questao2 {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
     

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //Faça um programa para solicitar o nome e a idade de uma pessoa. Se sua idade for menor que 18 anos, escrever a mensagem: "É menor".
 
-public class exercicio1 {
+public class questao1 {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
     

@@ -2,7 +2,7 @@ package POB.exercicios1;
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
-public class exercicio1 {
+public class questao1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         DecimalFormat df = new DecimalFormat("0.00");

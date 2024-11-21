@@ -3,7 +3,7 @@ package POB.exercicios1;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-public class exercicio3 {
+public class questao3 {
     public static void main (String[] args) {
         Scanner ler = new Scanner(System.in);
         DecimalFormat df = new DecimalFormat("0.00");

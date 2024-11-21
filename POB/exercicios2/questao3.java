@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 // Faça um programa para solicitar o nome e as duas notas e um aluno. Calcular sua média e informá-la. Se ela for inferior a 7, escrever "Reprovado”; caso contrário escrever "Aprovado".
 
-public class exercicio3 {
+public class questao3 {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
     

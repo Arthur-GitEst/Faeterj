@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 // Elabore um programa para solicitar o nome de uma equipe de futebol, a quantidade de derrotas, empates e vitórias obtidas por ela no campeonato. Calcular e informar: a quantidade de pontos ganhos e a quantidade de pontos perdidos.
 
-public class exercicio5 {
+public class questao5 {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
 

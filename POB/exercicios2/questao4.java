@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 // Elabore um programa para solicitar o nome, o sexo e o salário bruto de um empregado. Se o seu sexo for masculino, descontar 5% de seu salário; caso contrário, descontar 3%. Informar o valor do desconto e o salário líquido.
 
-public class exercicio4 {
+public class questao4 {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
         DecimalFormat df = new DecimalFormat("#.00");

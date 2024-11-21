@@ -3,6 +3,83 @@
   "configurations": [
     {
       "type": "java",
+      "name": "questao9",
+      "request": "launch",
+      "mainClass": "POB.exercicios4.questao9",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
+      "name": "questao8",
+      "request": "launch",
+      "mainClass": "POB.exercicios4.questao8",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
+      "name": "questao7",
+      "request": "launch",
+      "mainClass": "POB.exercicios4.questao7",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
+      "name": "questao6",
+      "request": "launch",
+      "mainClass": "POB.exercicios4.questao6",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
+      "name": "questao5",
+      "request": "launch",
+      "mainClass": "POB.exercicios4.questao5",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
+      "name": "questao4",
+      "request": "launch",
+      "mainClass": "POB.exercicios4.questao4",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
+      "name": "exercicio9",
+      "request": "launch",
+      "mainClass": "POB.exercicios2.exercicio9",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
+      "name": "exercicio8",
+      "request": "launch",
+      "mainClass": "POB.exercicios2.exercicio8",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
+      "name": "exercicio7",
+      "request": "launch",
+      "mainClass": "POB.exercicios2.exercicio7",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
+      "name": "exercicio6",
+      "request": "launch",
+      "mainClass": "POB.exercicios2.exercicio6",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
+      "name": "exercicio5",
+      "request": "launch",
+      "mainClass": "POB.exercicios2.exercicio5",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
       "name": "ControlaPacientes",
       "request": "launch",
       "mainClass": "POB.exercicioArquivo.controle.ControlaPacientes",

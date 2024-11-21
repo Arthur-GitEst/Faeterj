@@ -7,7 +7,7 @@ import java.util.Scanner;
 // games, o total de calculadoras   e o  total de canetas vendidas ao término do dia. O programa deve solicitar também o
 // preço de cada um dos produtos e ao final calcular e informar o total do faturamento com cada produto e o faturamento total.
 
-public class exercicio4 {
+public class questao4 {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
         DecimalFormat df = new DecimalFormat("#.00");
