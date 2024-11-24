@@ -141,8 +141,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Reps/Faeterj/ESD/revisaoAV1",
-      "program": "c:/Reps/Faeterj/ESD/revisaoAV1/build/Debug/outDebug",
+      "cwd": "c:/Reps/Faeterj/ESD/arvoreB",
+      "program": "c:/Reps/Faeterj/ESD/arvoreB/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
