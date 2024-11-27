@@ -1,0 +1,2 @@
+G;Arthur;5900.0
+D;Fernanda;4200.0

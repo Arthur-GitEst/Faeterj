@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "POB.ProjetoAV2.Main",
+      "projectName": "Faeterj_5f529792"
+    },
+    {
+      "type": "java",
       "name": "questao9",
       "request": "launch",
       "mainClass": "POB.exercicios4.questao9",
@@ -141,8 +148,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Reps/Faeterj/ESD/arvoreB",
-      "program": "c:/Reps/Faeterj/ESD/arvoreB/build/Debug/outDebug",
+      "cwd": "c:/Reps/Faeterj/ESD/arvoreBEstrela",
+      "program": "c:/Reps/Faeterj/ESD/arvoreBEstrela/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
