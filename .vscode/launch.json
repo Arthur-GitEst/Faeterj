@@ -3,6 +3,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "PrincipalLeituraArquivo",
+      "request": "launch",
+      "mainClass": "pjrLeituraEscrita.PrincipalLeituraArquivo",
+      "projectName": "pjrLeituraEscrita"
+    },
+    {
+      "type": "java",
+      "name": "App",
+      "request": "launch",
+      "mainClass": "App",
+      "projectName": ""
+    },
+    {
+      "type": "java",
       "name": "Main",
       "request": "launch",
       "mainClass": "POB.ProjetoAV2.Main",
