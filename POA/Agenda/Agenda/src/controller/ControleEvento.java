@@ -25,9 +25,32 @@ public class ControleEvento {
 	
 	public void listarEvento() {
 		for (Evento evento : eventos) {
-			evento.mostrarEvento();
+			evento.Mostrar();
 		}
 	}
+
+	// public void mostrarEvento() {
+	// 	try (BufferedReader reader = new BufferedReader(new FileReader("eventos.txt"))) {
+    //         String linha;
+    //         while ((linha = reader.readLine()) != null) {
+    //           	String[] dados = linha.split(";");
+	// 			String descricao = dados[0];
+	// 			int dia = Integer.parseInt(dados[1]);
+	// 			int mes = Integer.parseInt(dados[2]);
+	// 			int ano = Integer.parseInt(dados[3]);
+	// 			String horario = dados[4];
+
+	// 			Data data = new Data(dia, mes, ano, horario);
+	// 			Evento evento = new Evento(descricao, data);
+
+	// 			evento.Mostrar();
+    //         }
+    //     } catch (FileNotFoundException e) {
+    //         System.out.println("Arquivo não encontrado.");
+    //     } catch (IOException e) {
+    //         System.out.println("Erro ao carregar: " + e.getMessage());
+    //     }
+	// }
 	
 	public void SalvarEvento(ArrayList<Evento> eventos) {
 		 try (BufferedWriter writer = new BufferedWriter(new FileWriter("eventos.txt"))) {
@@ -54,21 +77,22 @@ public class ControleEvento {
         try (BufferedReader reader = new BufferedReader(new FileReader("eventos.txt"))) {
             String linha;
             while ((linha = reader.readLine()) != null) {
-              String[] dados = linha.split(";");
-							String descricao = dados[0];
-							int dia = Integer.parseInt(dados[1]);
-							int mes = Integer.parseInt(dados[2]);
-							int ano = Integer.parseInt(dados[3]);
-							int horario = Integer.parseInt(dados[4]);
+              	String[] dados = linha.split(";");
+				String descricao = dados[0];
+				int dia = Integer.parseInt(dados[1]);
+				int mes = Integer.parseInt(dados[2]);
+				int ano = Integer.parseInt(dados[3]);
+				String horario = dados[4];
+				Data data = new Data(dia, mes, ano, horario);
 
-							eventos.add(new Evento());
+				eventos.add(new Evento(descricao, data));
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Arquivo de funcionarios não encontrado. Será criado ao salvar novos funcionarios.");
+            System.out.println("Arquivo não encontrado.");
         } catch (IOException e) {
-            System.out.println("Erro ao carregar funcionarios: " + e.getMessage());
+            System.out.println("Erro ao carregar: " + e.getMessage());
         }
-        return eventos;
+        return;
     }
     
 }

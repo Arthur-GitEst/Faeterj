@@ -27,12 +27,12 @@ public class Evento {
 	    return descricao;
 	  }
 	  
-	  public void mostrarEvento() {
+	  public void Mostrar() {
 	    System.out.println("Descrição: " + getDescricao());
 	    System.out.println("Data: " + getData().getDia() + "/" + getData().getMes() + "/" + getData().getAno() + "(" + getData().getHorario() + ")");
 	  }
 	  
 	  public String LinhaString() {
-		  return "Descrição: " + this.descricao + "/" + "Data: " + getData().getDia() + "/" + getData().getMes() + "/" + getData().getAno() + "(" + getData().getHorario() + ")";
+		  return "Descrição: " + this.descricao + ";" + "Data: " + getData().getDia() + ";" + getData().getMes() + ";" + getData().getAno() + ";" + getData().getHorario();
 	  }
 }
