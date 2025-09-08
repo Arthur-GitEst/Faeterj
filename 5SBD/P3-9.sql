@@ -1,0 +1,1 @@
+SELECT * FROM conta WHERE saldo > 9000 ORDER BY saldo DESC; 

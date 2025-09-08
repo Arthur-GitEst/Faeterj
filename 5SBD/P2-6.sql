@@ -1,0 +1,1 @@
+SELECT cliente_nome, cidade FROM cliente WHERE cidade = 'Niterói' OR cidade = 'Volta Redonda' OR cidade = 'Itaboraí';

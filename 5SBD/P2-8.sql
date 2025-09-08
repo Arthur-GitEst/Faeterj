@@ -1,0 +1,1 @@
+SELECT cliente_nome || ' mora em ' || cidade AS Frase FROM cliente;

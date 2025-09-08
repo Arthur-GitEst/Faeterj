@@ -1,0 +1,1 @@
+SELECT conta_numero, saldo FROM conta;

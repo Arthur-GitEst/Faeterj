@@ -1,0 +1,1 @@
+SELECT ROUND(saldo, 0) FROM conta;

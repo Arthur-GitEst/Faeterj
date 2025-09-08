@@ -1,0 +1,1 @@
+SELECT UPPER(cliente_nome) FROM cliente;

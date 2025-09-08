@@ -1,0 +1,1 @@
+SELECT cliente_cod, cliente_nome FROM cliente WHERE cliente_cod BETWEEN 5 AND 15;

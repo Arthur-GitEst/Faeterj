@@ -1,0 +1,1 @@
+SELECT cliente_nome, cidade FROM cliente WHERE cidade='Macaé';

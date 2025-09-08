@@ -1,0 +1,1 @@
+SELECT cliente_nome FROM cliente WHERE cliente_nome LIKE 'F%';

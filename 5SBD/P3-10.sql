@@ -1,0 +1,1 @@
+SELECT cliente_nome, cidade FROM cliente WHERE cidade = 'Nova Iguaçu' OR cliente_nome LIKE '%Silva%';
