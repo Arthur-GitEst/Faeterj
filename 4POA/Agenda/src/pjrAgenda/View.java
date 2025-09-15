@@ -1,6 +1,8 @@
 package pjrAgenda;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -20,11 +22,15 @@ public class View {
 
             switch (opcao) {
                 case 1 -> inserirEvento();
-                // case 2 -> removerEvento();
+                case 2  -> {
+                    System.out.println("Qual a descrição do evento? ");
+                    String descricao = scanner.nextLine();
+                    removerEvento(descricao);
+                }
                 case 3 -> System.out.println("Programa Encerrado.");
                 default -> System.out.println("Opção inválida.");
             }
-        } while (opcao != 5);
+        } while (opcao != 3);
     }
 
     public void inserirEvento() {
@@ -36,10 +42,13 @@ public class View {
         String horario = scanner.nextLine();
 
         try {
-            File arq = new File("Arquivo/arq.txt");
+            File arq = new File("4POA/Agenda/Arquivo/arq.txt");
+            if(!arq.getParentFile().exists()) {
+                arq.getParentFile().mkdirs();  
+            } 
             FileWriter escrita = new FileWriter(arq, true);
             BufferedWriter bwEscrita = new BufferedWriter(escrita);
-            bwEscrita.write(descricao + " ------------------------- " + data + " (" + horario + ")");
+            bwEscrita.write(descricao.toUpperCase() + " ------------------------- " + data + " (" + horario + ")");
             bwEscrita.newLine();
             bwEscrita.close();
             escrita.close();
@@ -48,81 +57,36 @@ public class View {
         }
     }
 
-    // public void teste(String descricao) {
-    //     try {
-    //         FileReader leitura = new FileReader(".../Arquivo/arq.txt");
-    //         BufferedReader brLeitura = new BufferedReader(leitura);
-    //         FileWriter escrita = new FileWriter(".../Arquivo/arq.txt", true);
-    //         BufferedWriter bwEscrita = new BufferedWriter(escrita);
-    
-    //         String str;
-    //         while ((str = brLeitura.readLine()) != null) {
-    //             String[] lStr = str.split("\\s+");
-    //             if (lStr.length > 0 && lStr[0].equals(descricao)) {
-    //                 continue;
-    //             }
-    //             bwEscrita.write(str);
-    //             bwEscrita.newLine();
-    //         }
-    //     } catch (IOException e) {
-    //         e.printStackTrace();
-    //     }  
-    // } 
+    public void removerEvento(String descricao) {
+        File arquivoOriginal = new File("4POA/Agenda/Arquivo/arq.txt");
+        if(!arquivoOriginal.exists()) {
+            arquivoOriginal.getParentFile().mkdir();  
+        } 
+        File arquivoTemporario = new File("4POA/Agenda/Arquivo/arqTemp.txt");
+        boolean sucesso = false;
+        try ( BufferedReader brLeitura = new BufferedReader(new FileReader(arquivoOriginal));
+            BufferedWriter bwEscrita = new BufferedWriter(new FileWriter(arquivoTemporario))){
+            String str;
 
-    // public void removerEvento() {
-    //     System.out.println("Evento a ser removido (insira a descrição): ");
-    //     String evento = scanner.nextLine();
+            while ((str = brLeitura.readLine()) != null) {
+                String[] partes = str.split(" ------------------------- ");
 
-    //     removerLinha(evento);
-    // }
-
-    // public void removerLinha(String descricao) {
-    //     try {
-    //         FileReader leitura = new FileReader(".../Arquivo/arq.txt");
-    //         BufferedReader brLeitura = new BufferedReader(leitura);
-    //         FileWriter escrita = new FileWriter(".../Arquivo/arqTemp.txt", true);
-    //         BufferedWriter bwEscrita = new BufferedWriter(escrita);
-    //         String str;
-    //         while ((str = brLeitura.readLine()) != null) {
-    //             String[] partes = str.split(";");
-                
-    //             if (!partes[0].equals(descricao)){
-    //                 bwEscrita.write(str);
-    //                 bwEscrita.newLine();
-    //             }
-    //         }
-    //         brLeitura.close();
-    //         leitura.close();
-    //         bwEscrita.close();
-    //         escrita.close();
-    //     } catch (IOException e) {
-    //         e.printStackTrace();
-    //     }
-    // }
-       
-    
-
-    // public void PrincipalLeituraArquivo() {
-    //     try {
-
-    //         FileReader leitura = new FileReader(".../Arquivo/arq.txt");
-    //         BufferedReader brLeitura = new BufferedReader(leitura);
-    //         while (brLeitura.ready()) {
-    //             String str = brLeitura.readLine();
-    //             System.out.println(str);
-
-    //         }
-
-    //         brLeitura.close();
-    //         leitura.close();
-
-    //     } catch (
-
-    //     FileNotFoundException e) {
-    //         e.printStackTrace();
-    //     } catch (IOException e) {
-    //         e.printStackTrace();
-    //     }
-    // }
+                if (!partes[0].equals(descricao.toUpperCase())){
+                    bwEscrita.write(str);
+                    bwEscrita.newLine();
+                }
+            }
+            sucesso = true;
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (sucesso) {
+                if (arquivoOriginal.delete()) {
+                    arquivoTemporario.renameTo(arquivoOriginal);
+            } else {
+                System.out.println("Erro ao substituir o arquivo.");
+            }
+        }
+    }
 }
 
