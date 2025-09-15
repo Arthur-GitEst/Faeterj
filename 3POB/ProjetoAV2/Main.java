@@ -1,4 +1,4 @@
-package POB.ProjetoAV2;
+package ProjetoAV2;
 
 import POB.ProjetoAV2.controller.FuncionarioController;
 import POB.ProjetoAV2.view.FuncionarioView;
