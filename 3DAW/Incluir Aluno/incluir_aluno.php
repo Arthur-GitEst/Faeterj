@@ -4,8 +4,8 @@
     $nome = $_POST["nome"];
     $email = $_POST["email"];
 
-    if(!file_exists("disciplinas.txt")) {
-      $arqAluno = fopen("disciplinas.txt", "w") or die("Não foi possível criar o arquivo.");
+    if(!file_exists("alunos.txt")) {
+      $arqAluno = fopen("alunos.txt", "w") or die("Não foi possível criar o arquivo.");
     }
 
     $arqAluno = fopen("alunos.txt", "a") or die("Não foi possível abrir o arquivo.");
