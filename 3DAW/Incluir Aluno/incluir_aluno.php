@@ -9,7 +9,7 @@
     }
 
     $arqAluno = fopen("alunos.txt", "a") or die("Não foi possível abrir o arquivo.");
-    fwrite($arqAluno, $mat . ";" . $nome . ";" . $email . "\n");
+    fwrite($arqAluno, "\n" . $mat . ";" . $nome . ";" . $email);
     fclose($arqAluno);
     $msg = "Aluno incluído com sucesso!";
   }
@@ -45,8 +45,14 @@
         $arqAluno = fopen("alunos.txt", "r") or die("Não foi possível abrir o arquivo.");
         while (!feof($arqAluno)) {
           $linha = fgets($arqAluno);
+          $linha = trim($linha);
           if (!empty($linha)) {
-            list($mat, $nome, $email) = explode(";", $linha);
+            $dados = explode(";", $linha);
+            if (count($dados) < 3) {
+              continue;
+            }
+
+            list($mat, $nome, $email) = $dados;
             echo "<li>$mat - $nome - $email</li>";
           }
         }
