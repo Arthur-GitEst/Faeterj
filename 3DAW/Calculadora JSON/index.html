@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+</head>
+
+<body>
+  <form action="" method="post">
+    <input type="number" id="num1" placeholder="Primeiro número">
+    <input type="number" id="num2" placeholder="Segundo número">
+    <br><br>
+    <input type="radio" name="operacao" value="soma" checked> Soma
+    <input type="radio" name="operacao" value="subtracao"> Subtração
+    <input type="radio" name="operacao" value="multiplicacao"> Multiplicação
+    <input type="radio" name="operacao" value="divisao"> Divisão
+    <br><br>
+    <button type="button" onclick="Calcular()">Calcular</button>
+  </form>
+  <hr>
+  <p id="resultado">Resultado: -</p>
+  <p id="jsonDados">JSON: -</p>
+</body>
+<script>
+  function Calcular() {
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    const operacao = document.querySelector('input[name="operacao"]:checked').value;
+
+    if (Number.isNaN(num1) || Number.isNaN(num2)) {
+      document.getElementById('resultado').textContent = 'Resultado: preencha os dois números';
+      document.getElementById('jsonDados').textContent = 'JSON: -';
+      return;
+    }
+
+    const dados = { num1, num2, operacao };
+    const jsonEnviado = JSON.stringify(dados);
+    const dadosRecebidos = JSON.parse(jsonEnviado);
+
+    let resultado;
+
+    switch (dadosRecebidos.operacao) {
+      case 'soma':
+        resultado = dadosRecebidos.num1 + dadosRecebidos.num2;
+        break;
+      case 'subtracao':
+        resultado = dadosRecebidos.num1 - dadosRecebidos.num2;
+        break;
+      case 'multiplicacao':
+        resultado = dadosRecebidos.num1 * dadosRecebidos.num2;
+        break;
+      case 'divisao':
+        resultado = dadosRecebidos.num2 !== 0 ? dadosRecebidos.num1 / dadosRecebidos.num2 : 'Não é possível dividir por zero';
+        break;
+    }
+
+    document.getElementById('resultado').textContent = `Resultado: ${resultado}`;
+    document.getElementById('jsonDados').textContent = `JSON: ${jsonEnviado}`;
+  }
+</script>
+
+</html>
