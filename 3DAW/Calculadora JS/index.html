@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Javascript</title>
+    <style>
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .hidden {
+            display: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="n1">
+        <input type="text" id="n2">
+        <br>
+        <button onclick="Calcular()">Calcular</button>
+        <br><br>
+        <p id="resultado" class="hidden"></p>
+    </div>
+    
+</body>
+<script>
+    const Calcular = () => {
+        const n1 = document.getElementById("n1").value;
+        const n2 = document.getElementById("n2").value;
+        const resultado = document.getElementById("resultado");
+
+        resultado.innerText = "Resultado: " + (Number(n1) + Number(n2));
+        resultado.classList.toggle("hidden");
+    }
+</script>
+</html>
