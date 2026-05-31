@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicacao Web - Adiciona Pergunta</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav>
+    <a href="adicionar.html">Adicionar Perguntas</a> |
+    <a href="listar.html">Listar Perguntas</a> |
+    <a href="listar_especifica.html">Listar Pergunta Especifica</a> |
+    <a href="alterar.html">Alterar Pergunta</a> |
+    <a href="excluir.html">Excluir Pergunta</a>
+  </nav>
+
+  <div class="container">
+    <h1>Criar Perguntas</h1>
+
+    <form id="formPergunta">
+      <label for="tipo">Tipo de pergunta:</label><br>
+      <select id="tipo" name="tipo">
+        <option value="multipla">Multipla escolha</option>
+        <option value="discursiva">Discursiva</option>
+      </select><br><br>
+
+      <button type="button" id="btnSelecionarTipo">Selecionar tipo</button>
+
+      <br><br>
+
+      <label for="pergunta">Pergunta:</label><br>
+      <input type="text" id="pergunta" name="pergunta" required><br><br>
+
+      <div id="blocoMultipla">
+        <label>Alternativas Falsas:</label><br>
+        <input type="text" id="falsa1" name="falsa1" required><br>
+        <input type="text" id="falsa2" name="falsa2" required><br>
+        <input type="text" id="falsa3" name="falsa3" required><br><br>
+
+        <label for="respostaMultipla">Resposta Correta:</label><br>
+        <input type="text" id="respostaMultipla" name="respostaMultipla" required><br><br>
+      </div>
+
+      <div id="blocoDiscursiva" class="hidden">
+        <label for="respostaDiscursiva">Resposta esperada:</label><br>
+        <input type="text" id="respostaDiscursiva" name="respostaDiscursiva" required><br><br>
+      </div>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="adicionar.js"></script>
+</body>
+
+</html>

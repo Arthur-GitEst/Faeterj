@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicacao Web - Excluir Pergunta</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav>
+    <a href="adicionar.html">Adicionar Perguntas</a> |
+    <a href="listar.html">Listar Perguntas</a> |
+    <a href="listar_especifica.html">Listar Pergunta Especifica</a> |
+    <a href="alterar.html">Alterar Pergunta</a> |
+    <a href="excluir.html">Excluir Pergunta</a>
+  </nav>
+
+  <div class="container">
+    <h1>Excluir Pergunta</h1>
+
+    <div id="status"></div>
+
+    <form id="formExcluir">
+      <label for="indice">Selecione a pergunta:</label><br>
+      <select id="indice" name="indice" required></select>
+      <button type="submit">Excluir</button>
+    </form>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="excluir.js"></script>
+</body>
+
+</html>

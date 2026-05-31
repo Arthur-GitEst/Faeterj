@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplicacao Web - Alterar Pergunta</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav>
+    <a href="adicionar.html">Adicionar Perguntas</a> |
+    <a href="listar.html">Listar Perguntas</a> |
+    <a href="listar_especifica.html">Listar Pergunta Especifica</a> |
+    <a href="alterar.html">Alterar Pergunta</a> |
+    <a href="excluir.html">Excluir Pergunta</a>
+  </nav>
+
+  <div class="container">
+    <h1>Alterar Pergunta</h1>
+
+    <div id="status"></div>
+
+    <form id="formSelecionar">
+      <label for="indice">Selecione a pergunta:</label><br>
+      <select id="indice" name="indice" required></select>
+      <button type="submit">Carregar</button>
+    </form>
+
+    <div id="blocoEdicao" class="hidden">
+      <h2>Editar</h2>
+      <form id="formEdicao">
+        <p id="tipoAtual"></p>
+
+        <label for="perguntaEditar">Pergunta:</label><br>
+        <input type="text" id="perguntaEditar" required><br><br>
+
+        <label for="respostaEditar">Resposta:</label><br>
+        <input type="text" id="respostaEditar" required><br><br>
+
+        <button type="submit">Salvar Alteracao</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="alterar.js"></script>
+</body>
+
+</html>
