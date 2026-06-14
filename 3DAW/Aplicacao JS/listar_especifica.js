@@ -1,17 +1,13 @@
 const formBusca = document.getElementById('formBusca');
 const inputBusca = document.getElementById('perguntaBusca');
-const mensagem = document.getElementById('mensagem');
 const resultado = document.getElementById('resultado');
 
-function renderMensagem(texto) {
-  mensagem.innerHTML = texto ? `<p>${texto}</p>` : '';
-}
-
-function renderResultados(itens) {
+function renderizarResultados(itens) {
   resultado.innerHTML = '';
   itens.forEach((item) => {
     const li = document.createElement('li');
     li.innerHTML =
+      `<strong>ID:</strong> ${item.id}<br>` +
       `<strong>Tipo:</strong> ${item.tipo}<br>` +
       `<strong>Pergunta:</strong> ${item.pergunta}<br>` +
       `<strong>Resposta:</strong> ${item.resposta}`;
@@ -22,27 +18,28 @@ function renderResultados(itens) {
 formBusca.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const pergunta = sanitizeText(inputBusca.value);
-  const payload = getStoragePayload();
-  renderResultados([]);
-
-  if (!payload.hasStorage) {
-    renderMensagem('Arquivo de perguntas nao encontrado.');
-    return;
-  }
+  const pergunta = inputBusca.value.trim();
+  renderizarResultados([]);
 
   if (pergunta === '') {
-    renderMensagem('Digite uma pergunta para buscar.');
+    alert('Digite uma pergunta para buscar.');
     return;
   }
 
-  const encontrados = payload.perguntas.filter((item) => item.pergunta === pergunta);
+  fetch(`api.php?busca=${encodeURIComponent(pergunta)}`)
+    .then((res) => {
+      if (!res.ok) throw new Error('Erro ao realizar busca no servidor.');
+      return res.json();
+    })
+    .then((encontrados) => {
+      if (encontrados.length === 0) {
+        alert('Pergunta não encontrada.');
+        return;
+      }
 
-  if (encontrados.length === 0) {
-    renderMensagem('Pergunta nao encontrada.');
-    return;
-  }
-
-  renderMensagem('');
-  renderResultados(encontrados);
+      renderizarResultados(encontrados);
+    })
+    .catch((err) => {
+      alert('Erro: ' + err.message);
+    });
 });

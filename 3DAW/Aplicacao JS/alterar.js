@@ -1,4 +1,3 @@
-const statusAlterar = document.getElementById('status');
 const formSelecionar = document.getElementById('formSelecionar');
 const selectIndice = document.getElementById('indice');
 const blocoEdicao = document.getElementById('blocoEdicao');
@@ -7,95 +6,102 @@ const formEdicao = document.getElementById('formEdicao');
 const perguntaEditar = document.getElementById('perguntaEditar');
 const respostaEditar = document.getElementById('respostaEditar');
 
-let indiceAtual = null;
-
-function renderStatus(texto) {
-  statusAlterar.innerHTML = texto ? `<p>${texto}</p>` : '';
-}
+let perguntasMemoria = [];
+let perguntaSelecionada = null;
 
 function carregarSelect(perguntas) {
   selectIndice.innerHTML = '';
-  perguntas.forEach((item, indice) => {
+  perguntas.forEach((item) => {
     const option = document.createElement('option');
-    option.value = indice;
-    option.textContent = buildPerguntaLabel(item, indice);
+    option.value = item.id;
+    option.textContent = `[ID: ${item.id}] - ${item.tipo.toUpperCase()} - ${item.pergunta}`;
     selectIndice.appendChild(option);
   });
 }
 
 function carregarPerguntas() {
-  const payload = getStoragePayload();
+  formSelecionar.classList.add('hidden');
+  blocoEdicao.classList.add('hidden');
 
-  if (!payload.hasStorage) {
-    renderStatus('Arquivo de perguntas nao encontrado.');
-    formSelecionar.classList.add('hidden');
-    return;
-  }
+  fetch('api.php')
+    .then((res) => {
+      if (!res.ok) throw new Error('Erro ao buscar as perguntas no servidor.');
+      return res.json();
+    })
+    .then((data) => {
+      perguntasMemoria = data;
+      if (perguntasMemoria.length === 0) {
+        alert('Nenhuma pergunta cadastrada.');
+        return;
+      }
 
-  if (payload.perguntas.length === 0) {
-    renderStatus('Nenhuma pergunta cadastrada.');
-    formSelecionar.classList.add('hidden');
-    return;
-  }
-
-  renderStatus('');
-  formSelecionar.classList.remove('hidden');
-  carregarSelect(payload.perguntas);
+      formSelecionar.classList.remove('hidden');
+      carregarSelect(perguntasMemoria);
+    })
+    .catch((err) => {
+      alert('Erro: ' + err.message);
+    });
 }
 
 formSelecionar.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const payload = getStoragePayload();
-  if (payload.perguntas.length === 0) {
-    renderStatus('Nenhuma pergunta cadastrada.');
+  if (perguntasMemoria.length === 0) {
+    alert('Nenhuma pergunta cadastrada.');
     return;
   }
 
-  indiceAtual = Number(selectIndice.value);
-  const item = payload.perguntas[indiceAtual];
+  const idSelecionado = Number(selectIndice.value);
+  perguntaSelecionada = perguntasMemoria.find((item) => Number(item.id) === idSelecionado);
 
-  if (!item) {
-    renderStatus('Selecione uma pergunta valida.');
+  if (!perguntaSelecionada) {
+    alert('Selecione uma pergunta válida.');
     return;
   }
 
   blocoEdicao.classList.remove('hidden');
-  tipoAtual.textContent = `Tipo: ${item.tipo}`;
-  perguntaEditar.value = item.pergunta;
-  respostaEditar.value = item.resposta;
+  tipoAtual.textContent = `Tipo: ${perguntaSelecionada.tipo.toUpperCase()}`;
+  perguntaEditar.value = perguntaSelecionada.pergunta;
+  respostaEditar.value = perguntaSelecionada.resposta;
 });
 
 formEdicao.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  if (indiceAtual === null) {
-    renderStatus('Selecione uma pergunta valida.');
+  if (!perguntaSelecionada) {
+    alert('Selecione uma pergunta válida.');
     return;
   }
 
-  const novaPergunta = sanitizeText(perguntaEditar.value);
-  const novaResposta = sanitizeText(respostaEditar.value);
+  const novaPergunta = perguntaEditar.value.trim();
+  const novaResposta = respostaEditar.value.trim();
 
   if (novaPergunta === '' || novaResposta === '') {
     alert('Preencha pergunta e resposta para salvar.');
     return;
   }
 
-  const payload = getStoragePayload();
-  const item = payload.perguntas[indiceAtual];
-  if (!item) {
-    renderStatus('Selecione uma pergunta valida.');
-    return;
-  }
-
-  item.pergunta = novaPergunta;
-  item.resposta = novaResposta;
-  payload.perguntas[indiceAtual] = item;
-  savePerguntas(payload.perguntas);
-  alert('Pergunta alterada com sucesso!');
-
-  carregarSelect(payload.perguntas);
+  fetch('api.php', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      id: perguntaSelecionada.id,
+      pergunta: novaPergunta,
+      resposta: novaResposta
+    })
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error('Erro ao atualizar a pergunta no servidor.');
+    })
+    .then(() => {
+      alert('Pergunta alterada com sucesso!');
+      carregarPerguntas();
+    })
+    .catch((err) => {
+      alert('Erro: ' + err.message);
+    });
 });
 
 carregarPerguntas();

@@ -56,40 +56,48 @@ formPergunta.addEventListener('submit', (event) => {
   event.preventDefault();
 
   const tipo = tipoSelect.value;
-  const pergunta = sanitizeText(perguntaInput.value);
+  const pergunta = perguntaInput.value.trim();
+  let payload = {};
 
   if (tipo === 'discursiva') {
-    const resposta = sanitizeText(respostaDiscursivaInput.value);
+    const resposta = respostaDiscursivaInput.value.trim();
     if (!validarDiscursiva(pergunta, resposta)) {
-      alert('Preencha todos os campos obrigatorios para o tipo selecionado.');
+      alert('Preencha todos os campos obrigatórios para o tipo selecionado.');
       return;
     }
+    payload = { tipo, pergunta, resposta, falsas: [] };
+  } else {
+    const falsas = [
+      falsa1Input.value.trim(),
+      falsa2Input.value.trim(),
+      falsa3Input.value.trim(),
+    ].filter((item) => item !== '');
+    const resposta = respostaMultiplaInput.value.trim();
 
-    const { perguntas } = getStoragePayload();
-    perguntas.push({ tipo, pergunta, resposta, falsas: [] });
-    savePerguntas(perguntas);
+    if (!validarMultipla(pergunta, resposta, falsas)) {
+      alert('Preencha todos os campos obrigatórios para o tipo selecionado.');
+      return;
+    }
+    payload = { tipo, pergunta, resposta, falsas };
+  }
+
+  fetch('api.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  })
+  .then((res) => {
+    if (!res.ok) throw new Error('Erro ao salvar pergunta no servidor.');
+  })
+  .then(() => {
     alert('Pergunta salva com sucesso!');
     limparFormulario();
-    return;
-  }
-
-  const falsas = [
-    sanitizeText(falsa1Input.value),
-    sanitizeText(falsa2Input.value),
-    sanitizeText(falsa3Input.value),
-  ].filter((item) => item !== '');
-  const resposta = sanitizeText(respostaMultiplaInput.value);
-
-  if (!validarMultipla(pergunta, resposta, falsas)) {
-    alert('Preencha todos os campos obrigatorios para o tipo selecionado.');
-    return;
-  }
-
-  const { perguntas } = getStoragePayload();
-  perguntas.push({ tipo, pergunta, resposta, falsas });
-  savePerguntas(perguntas);
-  alert('Pergunta salva com sucesso!');
-  limparFormulario();
+  })
+  .catch((err) => {
+    alert('Erro: ' + err.message);
+  });
 });
 
 atualizarCamposPorTipo();

@@ -1,63 +1,66 @@
-const statusExcluir = document.getElementById('status');
 const formExcluir = document.getElementById('formExcluir');
 const selectExcluir = document.getElementById('indice');
 
-function renderStatus(texto) {
-  statusExcluir.innerHTML = texto ? `<p>${texto}</p>` : '';
-}
+let perguntasMemoria = [];
 
 function carregarSelectExcluir(perguntas) {
   selectExcluir.innerHTML = '';
-  perguntas.forEach((item, indice) => {
+  perguntas.forEach((item) => {
     const option = document.createElement('option');
-    option.value = indice;
-    option.textContent = buildPerguntaLabel(item, indice);
+    option.value = item.id;
+    option.textContent = `[ID: ${item.id}] - ${item.tipo.toUpperCase()} - ${item.pergunta}`;
     selectExcluir.appendChild(option);
   });
 }
 
 function carregarPerguntas() {
-  const payload = getStoragePayload();
+  formExcluir.classList.add('hidden');
 
-  if (!payload.hasStorage) {
-    renderStatus('Arquivo de perguntas nao encontrado.');
-    formExcluir.classList.add('hidden');
-    return;
-  }
+  fetch('api.php')
+    .then((res) => {
+      if (!res.ok) throw new Error('Erro ao buscar as perguntas no servidor.');
+      return res.json();
+    })
+    .then((data) => {
+      perguntasMemoria = data;
+      if (perguntasMemoria.length === 0) {
+        alert('Nenhuma pergunta cadastrada.');
+        return;
+      }
 
-  if (payload.perguntas.length === 0) {
-    renderStatus('Nenhuma pergunta cadastrada.');
-    formExcluir.classList.add('hidden');
-    return;
-  }
-
-  renderStatus('');
-  formExcluir.classList.remove('hidden');
-  carregarSelectExcluir(payload.perguntas);
+      formExcluir.classList.remove('hidden');
+      carregarSelectExcluir(perguntasMemoria);
+    })
+    .catch((err) => {
+      alert('Erro: ' + err.message);
+    });
 }
 
 formExcluir.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const payload = getStoragePayload();
-  if (payload.perguntas.length === 0) {
-    renderStatus('Nenhuma pergunta cadastrada.');
+  if (perguntasMemoria.length === 0) {
+    alert('Nenhuma pergunta cadastrada.');
     return;
   }
 
-  const indice = Number(selectExcluir.value);
-  payload.perguntas.splice(indice, 1);
-  savePerguntas(payload.perguntas);
-  alert('Pergunta excluida com sucesso!');
+  const idExcluir = Number(selectExcluir.value);
 
-  if (payload.perguntas.length === 0) {
-    renderStatus('Nenhuma pergunta cadastrada.');
-    formExcluir.classList.add('hidden');
-    selectExcluir.innerHTML = '';
-    return;
+  if (confirm('Tem certeza de que deseja excluir esta pergunta?')) {
+    fetch(`api.php?id=${idExcluir}`, {
+      method: 'DELETE'
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error('Erro ao excluir a pergunta no servidor.');
+      })
+      .then(() => {
+        alert('Pergunta excluida com sucesso!');
+        carregarPerguntas();
+      })
+      .catch((err) => {
+        alert('Erro: ' + err.message);
+      });
   }
-
-  carregarSelectExcluir(payload.perguntas);
 });
 
 carregarPerguntas();
