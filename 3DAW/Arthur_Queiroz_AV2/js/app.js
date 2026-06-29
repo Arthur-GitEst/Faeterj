@@ -63,11 +63,7 @@ function iniciarApp() {
     configurarFormularios();
 }
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', iniciarApp);
-} else {
-    iniciarApp();
-}
+iniciarApp();
 
 // 1. NAVEGAÇÃO E SPA
 function alternarVisualizacao(viewId) {
@@ -130,16 +126,6 @@ function registrarNavegacao() {
         e.preventDefault();
         fecharTodosModais();
         abrirModal(modalLogin);
-    });
-
-    // Login com Google simulado (login direto instantâneo)
-    document.getElementById('btn-login-google')?.addEventListener('click', async () => {
-        try {
-            const resultado = await apiFetch(`${API_AUTH}?action=login`, 'POST', { email: 'cliente@teste.com', senha: '123' });
-            lidarComSucessoAuth(resultado.user);
-        } catch (erro) {
-            alert(erro.message);
-        }
     });
 }
 
