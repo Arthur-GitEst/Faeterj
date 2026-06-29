@@ -43,11 +43,6 @@ try {
             status TEXT NOT NULL DEFAULT 'Pendente',
             created_at TEXT DEFAULT CURRENT_TIMESTAMP
         )");
-        
-        // Criar usuário de teste padrão se a tabela estiver vazia
-        $senhaHash = password_hash('123456', PASSWORD_DEFAULT);
-        $pdo->exec("INSERT INTO usuarios (nome, email, senha, data_nascimento) 
-            VALUES ('Cliente Teste', 'cliente@teste.com', '$senhaHash', '1995-10-15')");
     }
 
     $action = isset($_GET['action']) ? $_GET['action'] : '';
@@ -83,15 +78,6 @@ try {
             $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE email = :email");
             $stmt->execute(['email' => $email]);
             $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            // Se for o login do google e o usuário de teste padrão não existir no banco, cria na hora
-            if (!$usuario && $email === 'cliente@teste.com') {
-                $senhaHash = password_hash('123456', PASSWORD_DEFAULT);
-                $pdo->exec("INSERT INTO usuarios (nome, email, senha, data_nascimento) 
-                    VALUES ('Cliente Teste', 'cliente@teste.com', '$senhaHash', '1995-10-15')");
-                $stmt->execute(['email' => $email]);
-                $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-            }
 
             // Validar senha
             if ($usuario && (password_verify($senha, $usuario['senha']) || ($email === 'cliente@teste.com' && ($senha === '123' || $senha === '123456')))) {
